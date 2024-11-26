@@ -35,7 +35,7 @@ func main() {
        firstNumber, _ = strconv.ParseFloat(input.Text, 64)
        operation = "+"
        input.SetText("")
-   })
+    })
 
 	minus := widget.NewButton("-", func() {
 		firstNumber, _ = strconv.ParseFloat(input.Text, 64)
@@ -87,20 +87,20 @@ func main() {
        }
 
        input.SetText(strconv.FormatFloat(result, 'f', -1, 64))
-   })
+    })
 
    	clear := widget.NewButton("C", func() {
        input.SetText("")
        firstNumber = 0
        operation = ""
-   })
+    })
 
    	numPad := container.NewGridWithColumns(3,
        buttons[7], buttons[8], buttons[9],
        buttons[4], buttons[5], buttons[6],
        buttons[1], buttons[2], buttons[3],
        buttons[0], clear, equals,
-   )
+    )
 
    	operations := container.NewVBox(plus, minus, multiply, divide, mod, power)
 
@@ -110,10 +110,10 @@ func main() {
            numPad,
            operations,
        ),
-   )
+    )
 
-   window.SetContent(content)
-   window.Resize(fyne.NewSize(300, 400))
-   window.Show()
-   myApp.Run()
+    window.SetContent(content)
+    window.Resize(fyne.NewSize(300, 400))
+    window.Show()
+    myApp.Run()
 }
